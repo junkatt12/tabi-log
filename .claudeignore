@@ -1,0 +1,13 @@
+node_modules/
+.expo/
+dist/
+build/
+.git/
+*.log
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.mov
+coverage/
