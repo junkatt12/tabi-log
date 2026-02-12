@@ -1,18 +1,15 @@
 Task:
-Rename tabs for MVP.
+Rename bottom tabs.
 
-Current:
-Default Expo tabs
+Target file:
+app/(tabs)/_layout.tsx
 
-Change to:
+Change tab names:
 - Home
 - Quest
 - Album
 
-Scope:
-Only modify navigation files.
-
 Do NOT:
-- Change layout design
+- Modify any other file
+- Change layout or styling
 - Add new libraries
-- Modify other features
