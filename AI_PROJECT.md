@@ -1,163 +1,52 @@
 # Project Overview
-Tabi-log is a travel album mobile app built with Expo (React Native).
+Tabi-log MVP (personal travel album app)
 
-Users can:
-- Create travel albums
-- Add photos and notes
-- Publish albums to timeline
-- Explore others' travel ideas (Quest)
-
-This is an MVP project for iOS and Android.
-
----
-
-# Tech Stack
+## Tech Stack
 - Expo (React Native)
 - TypeScript
-- Expo Router (tabs)
-- Supabase (Auth / Database / Storage)
+- Expo Router
+- Supabase (later)
 
----
+## Development Policy
+This is MVP only.
+Keep implementation minimal.
+Do NOT add extra features.
 
-# Folder Structure
-app/
-  (tabs)/
-    index.tsx      # Home
-    explore.tsx    # Explore/Quest (MVP: placeholder or simple list)
-    album.tsx      # Album (list/create/add)
-components/
-lib/
-  supabase.ts
-services/
-types/
+## MVP Features
 
----
-
-# Coding Rules
-- TypeScript strict mode
-- Functional components only
-- No class components
-- No `any`
-- Keep components small and simple
-
----
-
-# Navigation Rules
-Tabs only:
+### 1. Navigation Tabs
 - Home
-- Explore
+- Quest (Explore)
 - Album
 
-Do not change navigation structure unless explicitly instructed.
+### 2. Album (local only for now)
+- Create album (title only)
+- Album list
+- No cloud yet
 
----
+### 3. Quest
+- Static list (mock data)
 
-# Supabase Rule
-Always import from:
-lib/supabase.ts
+### 4. Home
+- Simple welcome screen
 
-Do not create new Supabase clients.
-
----
-
-# MVP Scope (Strict)
-The MVP includes ONLY:
-- Email login
-- Create album
-- Add photo + text memo to album
-- View own albums
-- Publish album (public / private)
-- Timeline (simple list of public albums)
-
----
-
-# NOT included in MVP
-- Social features (likes, comments, follow)
+## NOT in MVP
+- Authentication
+- Payments
+- Image upload
+- Supabase integration (later)
 - Notifications
-- Search
-- Map
-- Chat
-- Video
-- Advanced UI design
-- Performance optimization
-- Offline support
-- Pagination / Infinite scroll
-- Analytics
-- Push notifications
+- Animations
+- UI design improvements
 
----
+## Coding Rules
+- TypeScript strict
+- Functional components only
+- No any
+- No new libraries unless instructed
 
-# Database Schema (Fixed)
-Do NOT change table structure unless explicitly instructed.
-
-users
-- id (uuid)
-- email (text)
-- created_at (timestamp)
-
-albums
-- id (uuid)
-- user_id (uuid)
-- title (text)
-- is_public (boolean)
-- created_at (timestamp)
-
-photos
-- id (uuid)
-- album_id (uuid)
-- image_url (text)
-- memo (text)
-- created_at (timestamp)
-
----
-
-# Screens (Fixed)
-Tabs:
-- Home: Timeline (public albums list)
-- Explore: Quest list (MVP: simple placeholder)
-- Album:
-  - Album list
-  - Create album
-  - Add photo to album
-
----
-
-# User Flow (Fixed)
-Login
-→ Album list
-→ Create album
-→ Add photo
-→ Publish
-→ Home timeline shows public albums
-
-Do NOT redesign user flow.
-
----
-
-# Library Policy
-Do NOT install new libraries unless explicitly instructed.
-Use Expo built-in features only.
-
----
-
-# UI Policy
-Use default Expo components.
-Use default styles.
-No custom theming.
-No animations.
-
----
-
-# What NOT to touch
-- node_modules/
-- .expo/
-- dist/
-- build/
+## Do NOT touch
+- node_modules
 - package-lock.json
-- configuration files unless requested
-
----
-
-# Decision Policy
-Do NOT make architectural decisions.
-If something is unclear, implement the simplest possible solution.
+- .expo
+- build
